@@ -4,11 +4,14 @@
     <title>Progblogg</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <nav>
+    <div class="navknapp">Artikler</div>
+    <div class="navknapp">knapp 2</div>
+    <div class="navknapp">knapp 3</div>
+  </nav>
   <body>
     <%= yield %>
   </body>
