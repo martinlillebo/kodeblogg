@@ -1,3 +1,12 @@
-.navknapp {
+nav {
   color: green;
+  display: flex;
+  margin: 1.4rem 0 3rem 0;
+  a {
+    text-decoration: none;
+    color: brown;
+  }
+  a + a {
+    margin-left: 30px;
+  }
 }
