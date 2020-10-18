@@ -7,10 +7,13 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <div class="header">
+    <p>*Header*</p>
+  </div>
   <nav>
-    <div class="navknapp">Artikler</div>
-    <div class="navknapp">knapp 2</div>
-    <div class="navknapp">knapp 3</div>
+    <a href="#">Artikler</a>
+    <a href="#">Knapp 2</a>
+    <a href="#">Knapp 3</a>
   </nav>
   <body>
     <%= yield %>
