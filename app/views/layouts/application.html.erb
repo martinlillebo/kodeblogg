@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Progblogg</title>
+    <title>Kodebloggen</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class="header">
-    <p>*Header*</p>
+  <div id="header">
+    <h1>
+      <%= link_to "Kodebloggen", root_path %>
+    </h1>
   </div>
   <nav>
-    <a href="#">Artikler</a>
-    <a href="#">Knapp 2</a>
-    <a href="#">Knapp 3</a>
+    <%= link_to "Artikler", artikler_path %>
+    <%= link_to "Hva er Kodebloggen?", hva_er_kodebloggen_path %>
+    <%# <a href="#">Knapp 3</a> %>
   </nav>
   <body>
     <%= yield %>
