@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'hva-er-kodebloggen', to: 'sider#hva-er-kodebloggen'
   get 'artikler', to: 'sider#artikler'
   get 'ortogonalitet', to: 'bloggposter#ortogonalitet' # -betegner-et-uavhengighetsforhold-mellom-to-programvarekomponenter
+  get 'fordeler', to: 'bloggposter#fordeler' # -med å lagre info i plain text, og hvorfor mange bryr seg sånn om temaet
 end
