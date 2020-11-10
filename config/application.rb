@@ -17,7 +17,3 @@ module Progblogg
     # the framework and any gems in your application.
   end
 end
-
-# dette er lagt til av meg for å få inn egendefinert font: 
-config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
-config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
