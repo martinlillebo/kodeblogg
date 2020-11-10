@@ -1,0 +1,48 @@
+<h2>Fordeler med å lagre info i plain text, og hvorfor mange bryr seg sånn om temaet</h2>
+<p>Når man først begynner å sette seg inn i programmering, vil man etter hvert oppdage at mange smarte folk har sterke meninger om &quot;proprietære filformater&quot;, &quot;plain text&quot; og såkalt interoperabilitet mellom systemer. I denne teksten vil jeg gi en introduksjon til hva plain tekst er, hvilke fordeler og ulemper det har som format til datalagring, og hvorfor folk bryr seg sånn om det. </p>
+<h4>
+  Hva er plain text/ren tekst?
+</h4>
+<p>
+  Kort fortalt så henviser &quot;plain text&quot; til all tekst som både kan leses og forstås av mennesker. Det beste norske ordet jeg kjenner til som betyr det samme, er &quot;ren tekst&quot;. Motsetningen til ren tekst vil være tekst som bare kan forstås av maskiner. Mange vil sette definisjonen ganske strengt, sånn at så fort du har en fil som inneholder en remse med &quot;010001010101110&quot;, er det ikke lenger snakk om plaintekst. 
+</p>
+<p>Når vi krever at ren tekst skal kunne leses og forstås av menneskes, utelukker vi alt som er lagret i komprimert format. Kravet om forståbarhet setter i tillegg krav til meningsbærende navngiving. For eksempel er ikke <code>foo.bar = xyfig</code> meningsbærende nok til at vi kan si at dette er plain tekst/klartekst.</p>
+<p>Eksempler på filformater som kan oppfylle kravene til plain tekst er <code>.txt</code>, <code>.html</code> og <code>.xml</code>. De to sistnevnte innfører struktur til teksten, men endrer ikke lesbarheten som sådan. [@hunt_pragmatic_1999], s. 73</p>
+<p>Eksempler på filer som <em>ikke</em> er skrevet i ren tekst, er Microsoft Word-filer. Du kan åpne disse i Word og få &quot;ren tekst&quot; presentert på skjermen, men teksten er komprimert etter Word sin private algoritme, og kan ikke åpnes av noen andre programmer. Om du forsøker å åpne en <code>.docx</code>-fil i Notepad, får du bare pølsevev presentert på skjermen. </p>
+<h4>
+  Textfiles Are Forever
+</h4>
+<p>For å si det sånn: Om du ønsker å nedtegne livshistorien din til senere generasjoner, bør du heller gjøre dette i en Notepad-fil enn i en PowerPoint-presentasjon. Om det er ett format vi forventer at skal kunne leses av verdens programvare i år 2120, så er det ren tekst.  </p>
+<p>En ganske artig liste over fordeler med ren tekst kan leses på <a href="http://textfiles.com/100/whytext.oct">textfiles.com</a>. Merk at listen ble skrevet i 1987, og nettsiden den ligger på har vært uendret siden 1999, og er dermed et levende eksempel på hvordan den enkleste teknologien ofte lever lengst.  </p>
+<h4>
+  To ulemper er filstørrelse og prosesseringstid
+</h4>
+<p>Det finnes sjeldent en sølvkule som løser alle problemer, og det er nedsider også med ren tekst. Kanskje de viktiste er større filstørrelse og lengre prosesseringstid. </p>
+<p>Filstørrelsen kan være større fordi filene ikke komprimeres slik andre filformater kan, og det kan ta lengre tid for en maskin å prosessere en fil i klartekst vs. et spesialisert filformat som er optimert for å bli lest fort. </p>
+<p>I tilfeller der dette er uakseptable ulemper og man må velge et binært filformat, kan det være mulig å kompromisse ved å lagre viktig metadata i klartekst. [@hunt_pragmatic_1999], s. 74</p>
+<h4>
+  Ren tekst legger veien for samarbeidsprosjekter
+</h4>
+<p>Et eksempel på et miljø hvor kravet til ren tekst er strengt, er UNIX-lignende systemer og andre åpen kildekode-prosjekter. Når folk fra hele verden skal samarbeide om felles kodebaser, er det en fordel at alle kan åpne koden i vidt forskjellige programmer. Når kode og dokumentasjon skrives i ren tekst fremfor et låst format, garanterer vi at andre utviklere kan åpne og lese innholdet uten problemer. </p>
+<h4>
+  Et litt teknisk, men godt eksempel: Piping i UNIX-lignende systemer
+</h4>
+<p>I UNIX-systemer har det historisk vært etterstrebet å skrive små programmer som gjør en enkelt oppgave veldig godt. Dette har røtter tilbake til 70-tallet, og er del av en programmeringsfilosofi som det skrives egne bøker om. <sup>1</sup> <!-- [@kandal_brukerkurs_1998], delkapittel <em>Filosofien bak UNIX</em></p> -->
+  <p>Viktigheten av ren tekst dukker opp når man sitter der med alle disse små programmene, også ønsker man å bruke flere av de på samme klump med data. </p>
+  <p>For eksempel kan man ønske å finne ut hvor mange ord som fins totalt i en mappe med filer. Da har vi programmet <em>cat</em>  som tar all teksten i en fil og skriver det ut til et spesifisert sted, og et annet program,<em>wc</em>, kan telle antall ord som blir utskrevet. Disse to programmene kan slås sammen på denne måten:</p>
+  <pre><code><span class="hljs-keyword">cat</span> * | wc -<span class="hljs-built_in">w</span>
+</code></pre>
+  <p>Forklaring: <code>cat *</code> skriver ut all tekst i alle filer i mappen, og i stedet for et det skrives ut til skjermen så redirigeres teksten til et annet program ved hjelp av <code>|</code>-symbolet, som kalles for en &quot;pipe&quot;. Programmet som teksten redirigeres til, er <em>wc</em>, som med kommandoen <code>wc -w</code> teller antall ord den blir gitt. </p>
+  <p>Det som gjør det mulig å sende data frem og tilbake mellom helt forskjellige programmer på denne måten, er enigheten om at <em>ren tekst</em> er konvensjonell filtype som mottas og produseres. </p>
+  <h4>
+    Avrunding: Hvorfor bryr folk seg om ren tekst?
+  </h4>
+  <p>For å oppsummere, er ren tekst tekst som kan leses og forstås av andre uten problemer, og uten spesifikk programvare. Folk bryr seg om dette fordi data som lagres i ikke-rene tekstformater er mer sårbare for å bli uleselige over tid, og vanskeliggjør samarbeid på tvers av utviklere. Samtidig har mer prosesserte filformater ulike fordeler ved seg over ren tekst, som bl.a. raskere ytelse eller lavere filstørrelse. Avslutningsvis kan det også være i en bedrifts interesse å gjøre dataene sine mer utilgjengelige, men det er heller grunnlag for en egen, fremtidig bloggpost. </p>
+  <p><sup>1</sup>: Eric S. Raymond sin &quot;The Art of UNIX Programming&quot; er en av de bedre jeg kjenner til. I god åpenhetsstil ligger hele boka hans gratis på nettsiden hans (skrevet som en gigantisk tekstfil), eller den kan bestilles i faktisk bokform. Kanskje den morsomste delen av boka er appendikset til slutt, med visdomsberetninger om <a href="http://www.catb.org/~esr/writings/unix-koans/ten-thousand.html">Master Foo og hans programmeringsstudenter</a></p>
+  <!-- references (auto)
+
+[@hunt_pragmatic_1999]: Hunt, Andrew, and David Thomas. 1999. The Pragmatic Programmer - from Journeyman to Master. Addison-Wesley Professional. 
+
+[@kandal_brukerkurs_1998]: Kandal, Trond. 1998. “Brukerkurs I UNIX.” http://folk.ntnu.no/kandal/unixkurs/kurs.html. 
+
+-->
