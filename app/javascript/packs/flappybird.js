@@ -77,6 +77,9 @@ function gameOver() {
 
 //  **************************************************** variablerdeklarering, eventlyttere og funksjonsinvokering 
 
+// Pynter litt på headeren
+document.querySelector("#header-lenke").innerHTML = "FlappyBird"
+
 // deklarerer variabler som velger spillobjektene
 const spillContainer = document.querySelector(".spill-container")
 const fugl = document.querySelector(".fugl")
@@ -91,5 +94,6 @@ let spillFerdig = false
 lagStolper() // oppretter en stolpe og starter et intervall som skyver den mot venstre.
 
 document.addEventListener("keyup", fuglHoppOppover)
+document.addEventListener("click", fuglHoppOppover)
 
 let nedoverIntervall = setInterval(fuglFalleNedover, 20)

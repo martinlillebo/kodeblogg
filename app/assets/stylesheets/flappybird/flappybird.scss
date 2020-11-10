@@ -25,15 +25,15 @@ body {
   overflow: hidden;
 }
 
-.marginUnder {
-  background-color: white;
-  width: $spillContainerBredde;
-  height: $margintykkelse*2;
-  top: $spillContainerHøyde + 50;
-  left: $marginjustering;
-  z-index: +2;
-  margin: 0 auto;
-}
+// .marginUnder {
+//   background-color: white;
+//   width: $spillContainerBredde;
+//   height: $margintykkelse*2;
+//   top: $spillContainerHøyde + 50;
+//   left: $marginjustering;
+//   z-index: +2;
+//   margin: 0 auto;
+// }
 
 .himmel {
   // background-color: blue;
