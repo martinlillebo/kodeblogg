@@ -15,7 +15,20 @@
  */
 
 * {
-  font-family: 'Courier', 'Courier New';
+  font-family: 'Arial', 'Courier', 'Courier New';
+}
+
+#header {
+  h1 {
+    a {
+      font-family: 'Courier';
+    }
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Courier New';
+  margin-top: 40px; 
 }
 
 body {
