@@ -1,0 +1,94 @@
+$spillContainerHøyde: 500px;
+$spillContainerBredde: 500px;
+
+$fuglContainerX: 45px;
+$fuglContainerY: 45px;
+
+$stolpeHøyde: 250px;
+$stolpeBredde: 50px;
+$stolpeGrenseFraTopp: 200px;
+
+$margintykkelse: 50px;
+$marginjustering: 50px;
+
+body {
+  margin: 0 0;
+} 
+
+.spill-container {
+  width: $spillContainerBredde;
+  height: $spillContainerHøyde;
+  position: relative;
+  margin: 0 auto;
+  // left: $marginjustering;
+  // top: $marginjustering;
+  overflow: hidden;
+}
+
+.marginUnder {
+  background-color: white;
+  width: $spillContainerBredde;
+  height: $margintykkelse*2;
+  top: $spillContainerHøyde + 50;
+  left: $marginjustering;
+  z-index: +2;
+  margin: 0 auto;
+}
+
+.himmel {
+  // background-color: blue;
+  background-image: asset-url("skyer.jpg");
+  background-size: 100%;
+  // background-color: yellow;
+  width: 100%;
+  height: 80%;
+  position: absolute;         /* Plasserer himmelen øverst i spillkontaineren*/
+}
+
+.fugl {
+  // background-color: yellow;
+  background-image: asset-url("flappybird.png");
+  background-size: 100%;
+  // background-color: orange;
+  width: $fuglContainerX;
+  height: $fuglContainerY;
+  position: absolute;
+}
+
+.bakke {
+  // background-color: brown;
+  background-image: asset-url("bakke2.png");
+  background-size: 100%;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0px;                 /* Plasserer bakken nederst i spillkontaineren*/
+  z-index: +1;
+} 
+
+.stolpe {
+  // background-color: green;
+  background-image: asset-url("pipe.png");
+  background-size: 100%;
+  width: $stolpeBredde;
+  height: $stolpeHøyde; 
+  position: absolute;
+}
+
+.stolpeOver {
+  // background-color: green;
+  background-image: asset-url("pipe.png");
+  background-size: 100%;
+  width: $stolpeBredde;
+  height: $stolpeHøyde;
+  position: absolute;
+  transform: rotate(180deg);
+}
+
+.nyttSpillKnapp {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  left: 155px;
+  top: 150px;
+}
