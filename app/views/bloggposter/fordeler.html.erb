@@ -9,9 +9,17 @@
 <p>
   Kort fortalt så henviser &quot;plain text&quot; til all tekst som både kan leses og forstås av mennesker. Det beste norske ordet jeg kjenner til som betyr det samme, er &quot;ren tekst&quot;. Motsetningen til ren tekst vil være tekst som bare kan forstås av maskiner. Mange vil sette definisjonen ganske strengt, sånn at så fort du har en fil som inneholder en remse med &quot;010001010101110&quot;, er det ikke lenger snakk om plaintekst. 
 </p>
-<p>Når vi krever at ren tekst skal kunne leses og forstås av menneskes, utelukker vi alt som er lagret i komprimert format. Kravet om forståbarhet setter i tillegg krav til meningsbærende navngiving. For eksempel er ikke <code>foo.bar = xyfig</code> meningsbærende nok til at vi kan si at dette er plain tekst/klartekst.</p>
-<p>Eksempler på filformater som kan oppfylle kravene til plain tekst er <code>.txt</code>, <code>.html</code> og <code>.xml</code>. De to sistnevnte innfører struktur til teksten, men endrer ikke lesbarheten som sådan. [@hunt_pragmatic_1999], s. 73</p>
-<p>Eksempler på filer som <em>ikke</em> er skrevet i ren tekst, er Microsoft Word-filer. Du kan åpne disse i Word og få &quot;ren tekst&quot; presentert på skjermen, men teksten er komprimert etter Word sin private algoritme, og kan ikke åpnes av noen andre programmer. Om du forsøker å åpne en <code>.docx</code>-fil i Notepad, får du bare pølsevev presentert på skjermen. </p>
+<p>Når vi krever at ren tekst skal kunne leses og forstås av menneskes, utelukker vi alt som er lagret i komprimert format. 
+  Kravet om forståbarhet setter i tillegg krav til meningsbærende navngiving. For eksempel er ikke <code>foo.bar = xyfig</code>
+  meningsbærende nok til at vi kan si at dette er plain tekst/klartekst. Et eksempel på kode som faktisk <i>er</i> skrevet i klartekst, er setningen 
+  <code>personInformasjon = {navn, alder, adresse}</code>. Hvis denne setningen i tillegg ligger lagret i en åpent lesbar fil, kan vi si at den 
+  er skrevet i klartekst. </p>
+<p>Eksempler på filformater som kan oppfylle kravene til plain tekst er <code>.txt</code>, <code>.html</code> og <code>.xml</code>. 
+  De to sistnevnte innfører struktur til teksten, men endrer ikke lesbarheten som sådan. [@hunt_pragmatic_1999], s. 73</p>
+<p>Eksempler på filer som <em>ikke</em> er skrevet i ren tekst, 
+  er Microsoft Word-filer. Du kan åpne disse i Word og få &quot;ren tekst&quot; presentert på skjermen, 
+  men teksten er komprimert etter Word sin private algoritme, og kan ikke åpnes av noen andre programmer. 
+  Om du forsøker å åpne en <code>.docx</code>-fil i Notepad, får du bare pølsevev presentert på skjermen. </p>
 <h4>
   Textfiles Are Forever
 </h4>
