@@ -66,6 +66,7 @@ function gameOver() {
   spillFerdig = true
   clearInterval(nedoverIntervall)
   document.removeEventListener("keyup", fuglHoppOppover)
+  document.removeEventListener("click", fuglHoppOppover)
   // lager "nytt spill?"-skjermen
   spillContainer.style.opacity = 0.75;
   const nyttSpillKnapp = document.createElement("button")
