@@ -8,3 +8,20 @@ ul {
     }
   }
 }
+
+.bloggpost-header {
+  a {
+    font-family: Courier;
+    text-decoration: none;
+    font-size: 30px;
+    color: #91C7B1;
+    font-weight: bold;
+  }
+  .dato {
+    line-height: 1.0;
+    font-size: 14px;
+    color: #545484;
+    margin-top: 3px;
+  }
+}
+
