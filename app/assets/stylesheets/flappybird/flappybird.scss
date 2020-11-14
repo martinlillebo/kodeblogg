@@ -11,6 +11,9 @@ $stolpeGrenseFraTopp: 200px;
 $margintykkelse: 50px;
 $marginjustering: 50px;
 
+$rosaFarge: #F9CFC8;
+$grønnFarge: #91C7B1;
+
 body {
   margin: 0 0;
 } 
@@ -63,6 +66,27 @@ body {
   z-index: +1;
 } 
 
+.ticker {
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: $grønnFarge;
+  z-index: +2;
+}
+
+.ticker-tall {
+  font-size: 27px;
+  color: $rosaFarge;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  top: 25%;
+  position: relative;
+}
+
 .stolpe {
   // background-color: green;
   background-image: asset-url("pipe.png");
@@ -88,9 +112,9 @@ body {
   height: 100px;
   left: 155px;
   top: 150px;
-  background-color: #91C7B1;
-  border-color: #91C7B1;
-  color: #F9CFC8;
+  background-color: $grønnFarge;
+  border-color: $grønnFarge;
+  color: $rosaFarge;
   font-weight: bold;
   font-size: 28px;
   font-family: courier;

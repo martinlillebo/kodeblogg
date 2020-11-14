@@ -27,7 +27,6 @@ function lagBakke() {
     bakkeVenstre += 2;
     bakke.style.right = bakkeVenstre + "px";
   }
-
   const kjørBakke = setInterval(bevegBakkeMotHøyre, 10);
   if (!spillFerdig) setTimeout(lagBakke, 4000)
 }
@@ -41,6 +40,7 @@ function lagStolper() {
   let åpning = 100;
   stolpeHøyde += Math.random() * 120
   let stolpeHøydeOver = stolpeHøyde - 250 - åpning;
+  let passert = false;
 
   stolpe.classList.add("stolpe")
   stolpeOver.classList.add("stolpeOver")
@@ -55,6 +55,11 @@ function lagStolper() {
 
   function stolpeBevegeMotHøyre() {
     if (!spillFerdig) {
+      if ((stolpeVenstre < fuglVenstre) && passert === false) {
+        stolperPassert += 1;
+        ticker.innerHTML = stolperPassert;
+        passert = true;
+      }
       if (stolpeVenstre < -55) {
         clearInterval(kjørStolpe)
         spillContainer.removeChild(stolpe)
@@ -112,11 +117,14 @@ let fuglVenstre = 160;
 fugl.style.left = fuglVenstre + "px";
 const tyngdekraft = 2;
 let spillFerdig = false
+let stolperPassert = 0;
+const ticker = document.querySelector(".ticker-tall")
 
 lagBakke()
 lagStolper() // oppretter en stolpe og starter et intervall som skyver den mot venstre.
 
 document.addEventListener("keyup", fuglHoppOppover)
 document.addEventListener("click", fuglHoppOppover)
+
 
 let nedoverIntervall = setInterval(fuglFalleNedover, 20)
