@@ -9,6 +9,29 @@ function fuglFalleNedover() {
   fugl.style.top = fuglHøyde + "px"
 }
 
+function lagBakke() {
+  let bakkeVenstre = -500;
+
+  const bakke = document.createElement("div")
+  bakke.classList.add("bakke")
+  spillContainer.appendChild(bakke)
+
+  function bevegBakkeMotHøyre() {
+    if (spillFerdig) {
+      clearInterval(kjørBakke)
+    }
+    if (bakkeVenstre > 500) {
+      clearInterval(kjørBakke)
+      spillContainer.removeChild(bakke)
+    }
+    bakkeVenstre += 2;
+    bakke.style.right = bakkeVenstre + "px";
+  }
+
+  const kjørBakke = setInterval(bevegBakkeMotHøyre, 10);
+  if (!spillFerdig) setTimeout(lagBakke, 4000)
+}
+
 function lagStolper() {
   const stolpe = document.createElement("div")
   const stolpeOver = document.createElement("div")
@@ -30,7 +53,7 @@ function lagStolper() {
     spillContainer.appendChild(stolpeOver)
   }
 
-  function stolpeBevegeMotHøyre() { // denne må defineres inni lagStolpe() fordi stolpe-objektet kun er tilgjengelig i denne funksjonen
+  function stolpeBevegeMotHøyre() {
     if (!spillFerdig) {
       if (stolpeVenstre < -55) {
         clearInterval(kjørStolpe)
@@ -42,15 +65,13 @@ function lagStolper() {
       stolpeOver.style.left = stolpeVenstre + "px"
     }
     if (
-      // Følgende tre linjer er betingelser som trigger hvis fuglen krasjer i nedre rør eller bakken.
       fuglHøyde >= 355 || // trigger hvis fuglen krasjer i bakken
       fuglHøyde < 0 ||    // trigger hvis fuglen krasjer i taket 
       fuglHøyde + 45 > stolpeHøyde && stolpeVenstre < (fuglVenstre + 40) && (fuglVenstre - stolpeVenstre < 39) ||
-      // forklaring på tredelt grensebetingelse: 
       // første delbetingelse trigger hvis fuglen er nedenfor toppen på nedre rør (f.eks. krasjer i veggen),
       // andre delbetingelse trigger så lenge fuglen ikke er *forbi* nedre rør (f.eks. krasjen oppå toppen av rør), 
       // tredje delbetingelse trigger så lenge fuglen ikke er helt forbi røret, sånn at den kan få synke ned på andre siden av røret.
-      //
+
       // Følgende tre linjer er betingelser som trigger hvis fuglen krasjer i øvre rør.
       stolpeVenstre < (fuglVenstre + 40) && fuglHøyde < (stolpeHøydeOver + 250) && (fuglVenstre - stolpeVenstre < 39)
     ) {
@@ -78,7 +99,7 @@ function gameOver() {
 
 //  **************************************************** variablerdeklarering, eventlyttere og funksjonsinvokering 
 
-// Pynter litt på headeren
+// Pynter på headeren
 document.querySelector("#header-lenke").innerHTML = "FlappyBird"
 
 // deklarerer variabler som velger spillobjektene
@@ -92,6 +113,7 @@ fugl.style.left = fuglVenstre + "px";
 const tyngdekraft = 2;
 let spillFerdig = false
 
+lagBakke()
 lagStolper() // oppretter en stolpe og starter et intervall som skyver den mot venstre.
 
 document.addEventListener("keyup", fuglHoppOppover)
