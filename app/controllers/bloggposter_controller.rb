@@ -4,4 +4,7 @@ class BloggposterController < ApplicationController
 
   def fordeler
   end
+
+  def rammeverk
+  end
 end
