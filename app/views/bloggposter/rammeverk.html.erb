@@ -1,0 +1,215 @@
+<%# h3 %>
+<div>
+  <h1>
+    Rammeverk
+  </h1>
+  <p>
+    Full disclaimer i begynnelsen: Jeg har personlig erfaring med Rails-rammeverket, 
+    og språkene Ruby og JavaScript. Alt annet som nevnes har jeg lest meg opp til på 
+    et overordnet nivå. Kildene jeg har brukt er listet opp som direkte lenker eller 
+    nederst i artikkelen. 
+  </p>
+  <h2 class="grønn-overskrift">
+    Hva er et rammeverk?
+  </h2>
+  <p>
+    Et rammeverk er en samling konvensjonelle løsninger som en utvikler kan ta i bruk 
+    (<i>min definisjon</i>). Begrepet favner bredt, men innen webutvikling kan vi si 
+    at <%= link_to "et web-rammeverk gir oss en standardisert måte å bygge web-ressurser på", "https://en.wikipedia.org/wiki/Web_framework" %>
+  </p>
+  <p>
+    Det fins en rekke problemer som en utvikler må løse igjen og igjen på tvers av ulike 
+    oppdrag, både innen skriving av programvare, en nettside eller en såkalt webapp. Et 
+    eksempel er at alle nettsider med en innloggingsløsning ha kode som ivaretar brukerens 
+    og nettsidens sikkerhet. Passordet skal lagres i kryptert format, og nettsiden må ikke 
+    være sårbar for innbrudd. Videre må databaser konfigureres etter et gitt skjema, og 
+    informasjon skal flyte mellom rette deler av programmet. 
+  </p>
+  <p>
+    Det er en spøk som sier at alle gode nyvinninger innen utviklerarbeid blir gjort av en 
+    person som var for lat til å taste den samme sekvensen av tastetrykk igjen og igjen. 
+    Resultatet er at han eller hun fant en måte å automatisere det helt eller delvis på. 
+    Web-rammeverkene er ikke et unntak, og samtlige aktører i jungelen av ulike rammeverk 
+    har dette til felles: Utvikleren som bruker rammeverket skal kunne bruke mer av tiden 
+    sin på å implementere løsninger i stedet for å tukle med konfigurasjon av underliggende 
+    kode. 
+  </p>
+  <h3>
+    Fordeler og ulemper med rammeverk
+  </h3>
+  <p>
+    Sammenlignet med en "plain" nettside hvor alt er skrevet manuelt, innfører rammeverk 
+    både positive og negative endringer. For å starte med det negative vil et rammeverk 
+    nødvendigvis innføre relativt store mengder tredjepartskode, og produktet ditt blir 
+    dermed avhengig av annen kode som du ikke nødvendigvis forstår fullt ut, og som du 
+    heller ikke har full kontroll over. Størrelsen på produktet ditt vil også sannsynligvis 
+    bli større, siden det følger med mye "bloat" som du ikke tar i bruk, eller som er skrevet 
+    på en generell måte som ikke er optimal for akkurat din situasjon. 
+  </p>
+  <p>
+    Til gjengjeld vil løsningene være utbredte, bugs har sannsynligvis blitt adressert og fikset 
+    av andre, og det finnes store miljøer som bidrar med diskusjoner og informasjon rundt bruken 
+    av rammeverkenes bestanddeler. Sannsynligheten for at det sniker seg inn småfeil eller 
+    sikkerhetshull du selv ikke har tenkt på er derfor ofte lavere. 
+  </p>
+  <h2 class="grønn-overskrift">
+    Angular
+  </h2>
+  <p>
+    Angular er et webapp-rammeverk utviklet av Google. Rammeverket støtter MVC-arkitekturen, og 
+    legger opp til bruken av Typescript, et strengt typet programmeringsspråk som transkompilerer 
+    til JavaScript. Lavnivå JavaScript skal dermed ikke være nødvendig å bruke med mindre man selv 
+    ønsker det. 
+  </p>
+  <p>
+    Angular har et høyt fokus på innkapsling, og gjenbruk av modulær kode. Innkapslingen skal 
+    gå hånd i hånd med rammeverkets fokus på enhetstesting, og er noe som trekkes frem som en 
+    v styrkene ved rammeverket. Angular har noe de kaller <i>dependency injection</i> for enhetstesting. 
+    Det går ut på å bruke mock-data for å teste moduler i isolasjon, sånn at man ikke må trekke 
+    inn resten av rammeverket for å få testet komponenter. Det er tilrettelagt for å sette opp 
+    enhetstester på en lett måte.  
+  </p>
+  <h3>
+    Versjonshistorikk og navn
+  </h3>
+  <p>
+    Verdt å nevne: Angular-versjonene kategoriseres typisk til <i>AngularJS</i> og <i>Angular2+</i>. 
+    Versjon v1 kom i 2010, og refereres den dag i dag til som AngularJS. V2 kom i 2014, 
+    og i skrivende 2020-stund er de oppe i v10. Men alt etter v2 er bare Angular, eventuelt 
+    Angular 2+. 
+  </p>
+  <h2 class="grønn-overskrift">
+    Vue
+  </h2>
+  <p>
+    Vue er et webutvikler-rammeverk basert på JavaScript. Vue ble opprettet som GitHub-repo i 2013. 
+    Vue-komponenter kan lages i enkeltfiler, eller koden kan deles opp til et fullstendig filtre 
+    sånn som i Rails (se avsnitt nedenfor). 
+  </p>
+  <p>
+    Mye av syntaksen ligner på Angular sin, fordi <%= link_to "Vue i sin opprinnelige form hentet 
+    mye inspirasjon fra Angular", "https://vuejs.org/v2/guide/comparison.html" %>
+  </p>
+  <p>
+    En av fordelene som trekkes frem er øyeblikkelig oppdatering av DOM. For eksempel vil et 
+    element som teller antall listepunkt oppdatere seg om jeg sletter et av punktene gjennom 
+    konsollen. 
+  </p>
+  <p>
+    Et par ulemper skal være manglende standardisering av mappestruktur, og dårlig SEO. Og 
+    treg innlasting. Derfor fins det videre abstraksjoner og varianter av Vue som tar tak 
+    i dette. Et av de er Nuxt. 
+  </p>
+  <h2 class="grønn-overskrift">
+    Nuxt
+  </h2>
+  <p>
+    Nuxt er en videre abstraksjon av Vue-rammeverket. Nuxt er "bygd oppå Vue", og er altså 
+    en videre abstraksjon av Vue-rammeverket. Uttrykt fokus skal være redusert tid brukt 
+    på konfigurasjon, blant annet ved å standardisere mappestrukturen. 
+  </p>
+  <p>
+    De trekker frem at det som kommer fra server er en statisk nettside, som øker 
+    innlastingshastigheten. Nuxt tilrettelegger også for mere semantiske HTML-tags, 
+    som øker nettsidens tilgjengelighet og søkemotoroptimalisering. 
+  </p>
+  <h2 class="grønn-overskrift">
+    React
+  </h2>
+  <p>
+    React er et åpen kilde JavaScript-bibliotek for bruk til frontend webutvikling. 
+    React er laget og vedlikeholdt av en gruppe Facebook-ansatte, pluss diverse 
+    selvstendige utviklere og selskaper. 
+  </p>
+  <p>
+    De oppfordrer til bruk av <i>JSX</i>, som er en utvidelse av JavaScript. Her er bl.a. 
+    HTML-syntaks hybridisert inn i et forsøk på å gjøre en mer intuitiv variant av 
+    den direkte JavaScript-syntaksen for å skrive HTML-elementer.
+  </p>
+  <p>
+    Et av fordelene React-skaperne trekker frem, er deres <i>Virtual DOM</i>; en separat 
+    kopi av DOM-en som sammenlignes med nettleserens DOM. Kun differansen mellom 
+    disse to blir sendt inn som oppdatering til sistnevnte ved behov, for å på den 
+    måten spare tid og båndbredde. 
+  </p>
+  <h2 class="grønn-overskrift">
+    Gatsby
+  </h2>
+  <p>
+    Gatsby er bygget på React, og kan brukes for å kjapt lage små, raske nettsider. 
+  </p>
+  <p>
+    En av hovedfordelene Gatsby-leiren trekker frem er rask sideinnlasting. En av 
+    hovedulempene andre trekker frem er at det tar lang tid å kompilere siden når 
+    størrelsen begynner å bli betydelig. 
+  </p>
+  <p>
+    Gatsby trenger Node under utvikling, og bruker GraphQL for å hente inn 
+    nettsidedata. GraphQL er et verktøy for å gjøre API-calls. 
+  </p>
+  <h2 class="grønn-overskrift">
+    Ruby on Rails
+  </h2>
+  <p>
+    Ruby on Rails er et av de eldre rammeverkene for å skrive webapplikasjoner 
+    som fortsatt er i aktiv bruk. Hovedtanken er at rammeverket har tatt mange 
+    valg for spesifikke løsninger og verktøy på forhånd, sånn at brukeren slipper 
+    å bruke tid på dette. Prinsippene bak Rails oppsummeres i den såkalte 
+    <%= link_to "Railsdoktrinen", "https://www.lewagon.com/blog/rails_doctrine" %>
+    på hjemmesidene deres.
+  </p>
+  <p>
+    Rails lener seg tungt på bruken av kodegeneratorer for å skrive klasser, 
+    migrasjonsskjemaer og lignende. Rammeverket er også basert på <i>MVC</i>
+    arkitekturprinsippet.
+  </p>
+  <p>
+    Rails anvender ikke JavaScript eller et annet beslektet språk 
+    (TypeScript, CoffeeScript, 
+    Elm, etc.). I stedet for brukes programmeringsspråket <i>Ruby</i> til å gjøre arbeid 
+    både backend og frontend. På frontend-siden vil ruby-koden kompileres til ren 
+    HTML før den sendes til brukeren. 
+  </p>
+  <h3>
+    Eksempel på Rails-frontendkode: Henting av API-info fra Oslo Bysykkel
+  </h3>
+  <p>
+    Dette scriptet har to deler: Kontrollerkoden som henter API-info og parser 
+    den, og <code>.html.erb</code>-koden som markerer opp selve nettsiden.
+  </p>
+  <p>
+    Av hensyn til artikkellengden skriver jeg ikke inn kontroller-koden her, 
+    men den er mulig å lese den på denne nettsidens <%= link_to "GitHub-konto", "https://github.com/martinlillebo/kodeblogg" %>, under <code>app/controllers/bloggposter_
+      controller.rb</code>. På frontend-siden ser koden slik ut, hvor taggene som inneholder parentes
+    indikerer hvor det kjøres Ruby-kode. Koden kjøres ferdig og bakes om til 
+    vanlig HTML på serversiden, før den sendes brukerens nettleser.
+  </p>
+  <div>
+    <%=image_tag("ruby-eksempel.png", :class => "rails-kodeeksempel")%>
+  </div>
+  <p>
+    Resultatet brukeren ser for de første 3 stasjonene blir som følger: 
+    <div class="sykkelkode">
+      <% @sykkelhash[0..2].each do |element| %>
+        <p> Stasjon-navn: <%= @id_hash[element["station_id"]] %></p>
+        <% if element["num_bikes_available"] > 5 %>
+          <p style="color:green"> Antall sykler ledige: <%= element["num_bikes_available"] %></p>
+          <%# <br> %>
+        <% else %>
+          <p style="color:red"> Antall sykler ledige: <%= element["num_bikes_available"] %></p>
+        <% end %>
+        <%# <br> %>
+      <% end %>
+    </div>
+  </p>
+  <h2 class="grønn-overskrift">
+    Kilder
+  </h2>
+  <p>
+    <pre>
+    - Gordon, Zac. 2019. <%= link_to "What Is Gatsby JS and Why Use It", "https://www.youtube.com/watch?v=GuvAMcsoreI" %>
+    - Jack, Aaron. 2019. <%= link_to "Learn REACT JS in Just 5 MINUTES (2020)", "https://www.youtube.com/watch?v=MRIMT0xPXFI" %> 
+    - Sterkowitz, Andy. 2019. <%= link_to "What Is Angular? (Explained for Beginners)", "https://www.youtube.com/watch?v=VAkio68d51A" %>
+    </pre>
+  </p>
+</div>

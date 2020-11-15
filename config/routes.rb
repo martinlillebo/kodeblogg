@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'ortogonalitet', to: 'bloggposter#ortogonalitet' # -betegner-et-uavhengighetsforhold-mellom-to-programvarekomponenter
   get 'fordeler', to: 'bloggposter#fordeler' # -med å lagre info i plain text, og hvorfor mange bryr seg sånn om temaet
   get 'flappybird', to: 'sider#flappybird'
+  get 'rammeverk', to: 'bloggposter#rammeverk'
 end
