@@ -9,9 +9,9 @@
     et overordnet nivå. Kildene jeg har brukt er listet opp som direkte lenker eller 
     nederst i artikkelen. 
   </p>
-  <h3>
+  <h2 class="grønn-overskrift">
     Hva er et rammeverk?
-  </h3>
+  </h2>
   <p>
     Et rammeverk er en samling konvensjonelle løsninger som en utvikler kan ta i bruk 
     (<i>min definisjon</i>). Begrepet favner bredt, men innen webutvikling kan vi si 
@@ -52,7 +52,7 @@
     av rammeverkenes bestanddeler. Sannsynligheten for at det sniker seg inn småfeil eller 
     sikkerhetshull du selv ikke har tenkt på er derfor ofte lavere. 
   </p>
-  <h2>
+  <h2 class="grønn-overskrift">
     Angular
   </h2>
   <p>
@@ -64,7 +64,7 @@
   <p>
     Angular har et høyt fokus på innkapsling, og gjenbruk av modulær kode. Innkapslingen skal 
     gå hånd i hånd med rammeverkets fokus på enhetstesting, og er noe som trekkes frem som en 
-    v styrkene ved rammeverket. Angular har noe de kaller *dependency injection* for enhetstesting. 
+    v styrkene ved rammeverket. Angular har noe de kaller <i>dependency injection</i> for enhetstesting. 
     Det går ut på å bruke mock-data for å teste moduler i isolasjon, sånn at man ikke må trekke 
     inn resten av rammeverket for å få testet komponenter. Det er tilrettelagt for å sette opp 
     enhetstester på en lett måte.  
@@ -73,12 +73,12 @@
     Versjonshistorikk og navn
   </h3>
   <p>
-    Verdt å nevne: Angular-versjonene kategoriseres typisk til "AngularJS" og "Angular2+". 
-    Versjon v1 kom i 2010, og refereres den dag i dag til som *AngularJS*. V2 kom i 2014, 
-    og i skrivende 2020-stund er de oppe i v10. Men alt etter v2 er bare *Angular*, eventuelt 
-    *Angular 2+*. 
+    Verdt å nevne: Angular-versjonene kategoriseres typisk til <i>AngularJS</i> og <i>Angular2+</i>. 
+    Versjon v1 kom i 2010, og refereres den dag i dag til som AngularJS. V2 kom i 2014, 
+    og i skrivende 2020-stund er de oppe i v10. Men alt etter v2 er bare Angular, eventuelt 
+    Angular 2+. 
   </p>
-  <h2>
+  <h2 class="grønn-overskrift">
     Vue
   </h2>
   <p>
@@ -100,9 +100,9 @@
     treg innlasting. Derfor fins det videre abstraksjoner og varianter av Vue som tar tak 
     i dette. Et av de er Nuxt. 
   </p>
-  <h3>
+  <h2 class="grønn-overskrift">
     Nuxt
-  </h3>
+  </h2>
   <p>
     Nuxt er en videre abstraksjon av Vue-rammeverket. Nuxt er "bygd oppå Vue", og er altså 
     en videre abstraksjon av Vue-rammeverket. Uttrykt fokus skal være redusert tid brukt 
@@ -113,7 +113,7 @@
     innlastingshastigheten. Nuxt tilrettelegger også for mere semantiske HTML-tags, 
     som øker nettsidens tilgjengelighet og søkemotoroptimalisering. 
   </p>
-  <h2>
+  <h2 class="grønn-overskrift">
     React
   </h2>
   <p>
@@ -122,19 +122,19 @@
     selvstendige utviklere og selskaper. 
   </p>
   <p>
-    De oppfordrer til bruk av *JSX*, som er en utvidelse av JavaScript. Her er bl.a. 
+    De oppfordrer til bruk av <i>JSX</i>, som er en utvidelse av JavaScript. Her er bl.a. 
     HTML-syntaks hybridisert inn i et forsøk på å gjøre en mer intuitiv variant av 
     den direkte JavaScript-syntaksen for å skrive HTML-elementer.
   </p>
   <p>
-    Et av fordelene React-skaperne trekker frem, er deres *Virtual DOM*; en separat 
+    Et av fordelene React-skaperne trekker frem, er deres <i>Virtual DOM</i>; en separat 
     kopi av DOM-en som sammenlignes med nettleserens DOM. Kun differansen mellom 
     disse to blir sendt inn som oppdatering til sistnevnte ved behov, for å på den 
     måten spare tid og båndbredde. 
   </p>
-  <h3>
+  <h2 class="grønn-overskrift">
     Gatsby
-  </h3>
+  </h2>
   <p>
     Gatsby er bygget på React, og kan brukes for å kjapt lage små, raske nettsider. 
   </p>
@@ -147,24 +147,26 @@
     Gatsby trenger Node under utvikling, og bruker GraphQL for å hente inn 
     nettsidedata. GraphQL er et verktøy for å gjøre API-calls. 
   </p>
-  <h2>
-    Rails
+  <h2 class="grønn-overskrift">
+    Ruby on Rails
   </h2>
   <p>
-    Ruby on Rails er rammeverk for å skrive webapplikasjoner. Hovedtanken er at 
-    rammeverket har tatt mange valg for spesifikke løsninger og verktøy på 
-    forhånd, sånn at brukeren slipper å bruke tid på dette. Prinsippene bak 
-    Rails oppsummeres i den såkalte <%= link_to "Railsdoktrinen", "https://www.lewagon.com/blog/rails_doctrine" %> på hjemmesidene deres.
+    Ruby on Rails er et av de eldre rammeverkene for å skrive webapplikasjoner 
+    som fortsatt er i aktiv bruk. Hovedtanken er at rammeverket har tatt mange 
+    valg for spesifikke løsninger og verktøy på forhånd, sånn at brukeren slipper 
+    å bruke tid på dette. Prinsippene bak Rails oppsummeres i den såkalte 
+    <%= link_to "Railsdoktrinen", "https://www.lewagon.com/blog/rails_doctrine" %>
+    på hjemmesidene deres.
   </p>
   <p>
     Rails lener seg tungt på bruken av kodegeneratorer for å skrive klasser, 
-    migrasjonsskjemaer og lignende. Rammeverket er også basert på *MVC*-
+    migrasjonsskjemaer og lignende. Rammeverket er også basert på <i>MVC</i>
     arkitekturprinsippet.
   </p>
   <p>
-    Rails er et av rammeverkene som ikke anvender JavaScript eller et annet språk 
-    som på en eller annet måte er beslektet med språket (TypeScript, CoffeeScript, 
-    Elm, etc.). I stedet for brukes programmeringsspråket *Ruby* til å gjøre arbeid 
+    Rails anvender ikke JavaScript eller et annet beslektet språk 
+    (TypeScript, CoffeeScript, 
+    Elm, etc.). I stedet for brukes programmeringsspråket <i>Ruby</i> til å gjøre arbeid 
     både backend og frontend. På frontend-siden vil ruby-koden kompileres til ren 
     HTML før den sendes til brukeren. 
   </p>
@@ -177,7 +179,37 @@
   </p>
   <p>
     Av hensyn til artikkellengden skriver jeg ikke inn kontroller-koden her, 
-    men den er mulig å lese den på denne nettsidens <%= link_to "GitHub-konto", 
-    "https://martinlillebo.github.io/kodeblogg/" %>. På frontend-siden (I view-filen) ser koden slik ut:
+    men den er mulig å lese den på denne nettsidens <%= link_to "GitHub-konto", "https://github.com/martinlillebo/kodeblogg" %>, under <code>app/controllers/bloggposter_
+      controller.rb</code>. På frontend-siden ser koden slik ut, hvor taggene som inneholder parentes
+    indikerer hvor det kjøres Ruby-kode. Koden kjøres ferdig og bakes om til 
+    vanlig HTML på serversiden, før den sendes brukerens nettleser.
+  </p>
+  <div>
+    <%=image_tag("ruby-eksempel.png", :class => "rails-kodeeksempel")%>
+  </div>
+  <p>
+    Resultatet brukeren ser for de første 3 stasjonene blir som følger: 
+    <div class="sykkelkode">
+      <% @sykkelhash[0..2].each do |element| %>
+        <p> Stasjon-navn: <%= @id_hash[element["station_id"]] %></p>
+        <% if element["num_bikes_available"] > 5 %>
+          <p style="color:green"> Antall sykler ledige: <%= element["num_bikes_available"] %></p>
+          <%# <br> %>
+        <% else %>
+          <p style="color:red"> Antall sykler ledige: <%= element["num_bikes_available"] %></p>
+        <% end %>
+        <%# <br> %>
+      <% end %>
+    </div>
+  </p>
+  <h2 class="grønn-overskrift">
+    Kilder
+  </h2>
+  <p>
+    <pre>
+    - Gordon, Zac. 2019. <%= link_to "What Is Gatsby JS and Why Use It", "https://www.youtube.com/watch?v=GuvAMcsoreI" %>
+    - Jack, Aaron. 2019. <%= link_to "Learn REACT JS in Just 5 MINUTES (2020)", "https://www.youtube.com/watch?v=MRIMT0xPXFI" %> 
+    - Sterkowitz, Andy. 2019. <%= link_to "What Is Angular? (Explained for Beginners)", "https://www.youtube.com/watch?v=VAkio68d51A" %>
+    </pre>
   </p>
 </div>
